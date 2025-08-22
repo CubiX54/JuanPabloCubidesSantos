@@ -1,5 +1,6 @@
 const tareaInput = document.getElementById('demoTareaInput');
 const agregarBtn = document.getElementById('demoAgregarBtn');
+const eliminarBtn = document.getElementById('demoEliminarBtn');
 const listaTareas = document.getElementById('demoListaTareas');
 
 agregarBtn.addEventListener('click', function () {
@@ -8,8 +9,16 @@ agregarBtn.addEventListener('click', function () {
 
   const nuevaTareaLi = document.createElement('li');
   nuevaTareaLi.textContent = nuevaTareaTexto;
+
   listaTareas.appendChild(nuevaTareaLi);
 
   tareaInput.value = '';
   tareaInput.focus();
+});
+
+
+eliminarBtn.addEventListener('click', function () {
+  if (listaTareas.firstChild) {
+    listaTareas.removeChild(listaTareas.lastChild);
+  }
 });
