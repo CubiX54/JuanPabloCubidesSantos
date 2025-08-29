@@ -18,7 +18,7 @@ agregarBtn.addEventListener('click', function () {
 
 
 eliminarBtn.addEventListener('click', function () {
-  if (listaTareas.firstChild) {
-    listaTareas.removeChild(listaTareas.lastChild);
+  if (listaTareas.lastChild) {
+    listaTareas.removeChild(listaTareas.firstChild);
   }
 });

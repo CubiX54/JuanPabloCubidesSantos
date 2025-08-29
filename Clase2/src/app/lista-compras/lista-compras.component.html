@@ -1,0 +1,15 @@
+
+<h1>Lista de Compras</h1>
+
+<input 
+  type="text" 
+  [(ngModel)]="inputValue"
+  placeholder="Agrega un elemento" 
+/>
+
+<button (click)="agregarTarea()">Agregar</button>
+<button (click)="eliminarTarea()">Eliminar</button>
+
+<ul>
+  <li *ngFor="let tarea of tareas">{{ tarea }}</li>
+</ul>
