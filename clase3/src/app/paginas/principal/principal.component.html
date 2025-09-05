@@ -1,0 +1,16 @@
+<h2>Suma de numeros</h2>
+<div class="container-fluid">
+    <form>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Numero 1</label>
+        <input type="number" class="form-control" [(ngModel)]="num1" name="num1">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Numero2</label>
+        <input type="number" class="form-control" [(ngModel)]="num2" name="num2">
+    </div>
+    <button type="button" class="btn btn-primary" (click)="miSuma()">Sumar</button>
+    </form>
+</div>
+<p>Resultado: {{ resultado }}</p>
+

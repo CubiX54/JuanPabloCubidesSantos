@@ -3,13 +3,13 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-lista-compras',
+  selector: 'app-clase2',
   standalone: true,
   imports: [FormsModule, CommonModule],
-  templateUrl: './lista-compras.component.html',
-  styleUrls: ['./lista-compras.component.css']
+  templateUrl: './clase2.component.html',
+  styleUrls: ['./clase2.component.css']
 })
-export class ListaComprasComponent {
+export class Clase2Component {
   inputValue: string = '';
   tareas: string[] = [];
 
@@ -24,4 +24,4 @@ export class ListaComprasComponent {
       this.tareas.shift();
     }
   }
-} 
+}
