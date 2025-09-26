@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "clase3": {
+    "parcialprimercorte": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/clase3",
+            "outputPath": "dist/parcialprimercorte",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "clase3:build:production"
+              "buildTarget": "parcialprimercorte:build:production"
             },
             "development": {
-              "buildTarget": "clase3:build:development"
+              "buildTarget": "parcialprimercorte:build:development"
             }
           },
           "defaultConfiguration": "development"

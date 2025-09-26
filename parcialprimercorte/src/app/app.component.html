@@ -1,0 +1,23 @@
+<app-encabezado
+  [cantidadProductos]="productosEnCarrito.length">
+</app-encabezado>
+
+<div class="filtros-container">
+  <button (click)="seleccionarCategoria('all')">Todos</button>
+  <button (click)="seleccionarCategoria('electronics')">Tecnología</button>
+  <button (click)="seleccionarCategoria('jewelery')">Joyería</button>
+  <button (click)="seleccionarCategoria('men\'s clothing')">Vestimenta de Hombre</button>
+  <button (click)="seleccionarCategoria('women\'s clothing')">Vestimenta de Mujer</button>
+</div>
+
+<app-productos
+  [productos]="productos"
+  [categoriaSeleccionada]="categoriaSeleccionada"
+  (agregarProducto)="agregarAlCarrito($event)">
+</app-productos>
+
+<app-carrito
+  [productosEnCarrito]="productosEnCarrito"
+  [total]="calcularTotal()"
+  (eliminarProducto)="eliminarDelCarrito($event)">
+</app-carrito>
