@@ -1,0 +1,7 @@
+{
+  "name": "miAppTodo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

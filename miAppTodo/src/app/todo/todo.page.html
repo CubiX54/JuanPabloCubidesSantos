@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/home"></ion-back-button> 
+    </ion-buttons>
+
+    <ion-title class="ion-text-center">
+      To-Do
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Nuevo</ion-label>
+      <ion-input placeholder="Escribe el nombre de la tarea"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" class="ion-margin-top">
+    Guardar
+  </ion-button>
+  
+</ion-content>

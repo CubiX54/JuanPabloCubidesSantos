@@ -1,0 +1,7 @@
+{
+  "name": "Clase5",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
