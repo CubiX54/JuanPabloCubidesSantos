@@ -1,0 +1,7 @@
+{
+  "name": "ParcialSegundoCorte",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

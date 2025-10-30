@@ -1,0 +1,13 @@
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    
+    // Limita el ancho del formulario en pantallas grandes
+    ion-card {
+        max-width: 450px;
+        width: 100%;
+        margin: 0;
+    }
+}

@@ -1,0 +1,21 @@
+.empty-cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    color: var(--ion-color-medium);
+
+    ion-icon {
+        font-size: 5rem;
+        margin-bottom: 10px;
+    }
+}
+
+// Estilo para las miniaturas del carrito
+ion-thumbnail {
+    --size: 70px;
+    img {
+        object-fit: contain;
+    }
+}   

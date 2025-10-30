@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/productos"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Carrito de Compras</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <div *ngIf="cartItems.length === 0" class="empty-cart ion-text-center">
+    <ion-icon name="cart-outline" size="large"></ion-icon>
+    <h2>Tu carrito está vacío</h2>
+    <ion-button (click)="goToProducts()">Ir a Productos</ion-button>
+  </div>
+  
+  <ion-list *ngIf="cartItems.length > 0" lines="full">
+    <ion-item *ngFor="let item of cartItems; let i = index">
+      <ion-thumbnail slot="start">
+        <img [src]="item.image" [alt]="item.title" />
+      </ion-thumbnail>
+      <ion-label class="ion-text-wrap">
+        <h2>{{ item.title }}</h2>
+        <p>Precio: ${{ item.price.toFixed(2) }}</p>
+      </ion-label>
+      <ion-button slot="end" fill="clear" color="danger" (click)="removeItem(i)">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+  
+  <ion-card *ngIf="cartItems.length > 0" class="ion-margin-top">
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-label>
+          <h2 class="ion-text-large">Total</h2>
+        </ion-label>
+        <ion-note slot="end" color="primary">
+          <h2 class="ion-text-bold">${{ total.toFixed(2) }}</h2>
+        </ion-note>
+      </ion-item>
+      <ion-button expand="block" (click)="completePurchase()" class="ion-margin-top">
+        <ion-icon name="checkmark-circle-outline" slot="start"></ion-icon>
+        Comprar
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
