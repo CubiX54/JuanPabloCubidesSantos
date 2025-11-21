@@ -1,0 +1,7 @@
+{
+  "name": "ParcialTercerCorte",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

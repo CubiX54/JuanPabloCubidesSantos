@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/feed"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light">Nueva Publicación</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="submitPost()" [disabled]="isLoading || !photoBlob">
+        Publicar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-card *ngIf="photoPath" class="ion-no-margin">
+    <img [src]="photoPath" alt="Vista previa de la publicación">
+  </ion-card>
+
+  <ion-button expand="block" (click)="takePicture()" color="secondary" class="ion-margin-top">
+  <ion-icon slot="start" name="camera"></ion-icon>
+  {{ photoPath ? 'Cambiar Foto' : 'Tomar Foto' }}
+</ion-button>
+<ion-card *ngIf="photoPath">
+  <img [src]="photoPath" alt="Vista previa de la publicación">
+</ion-card>
+
+  <ion-item class="ion-margin-top">
+    <ion-textarea 
+      placeholder="Escribe el pie de foto..." 
+      rows="4"
+      [(ngModel)]="caption"
+    ></ion-textarea>
+  </ion-item>
+  
+  <ion-text color="danger" *ngIf="isLoading" class="ion-padding-top ion-text-center">
+    Subiendo publicación...
+  </ion-text>
+
+</ion-content>

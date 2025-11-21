@@ -1,0 +1,50 @@
+/* Estilos para el Feed */
+
+// 1. Estilos para la barra de navegación (Header)
+ion-toolbar {
+  // Asegura que los botones (iconos y texto) sean blancos
+  ion-button {
+    --color: #ffffff !important; 
+  }
+
+  // Estilo para el título de la app
+  ion-title {
+    font-weight: bold;
+    color: var(--ion-color-secondary); /* Usa el azul brillante para el título */
+  }
+}
+
+// 2. Estilos para las tarjetas de publicación
+ion-card {
+  margin: 10px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  border-top: 3px solid var(--ion-color-secondary); /* Borde superior azul */
+}
+
+// 3. Estilos de la imagen del post
+.post-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+// 4. Estilos de los avatares
+ion-avatar {
+  border: 2px solid var(--ion-color-primary); /* Borde verde en el avatar */
+  padding: 2px;
+  min-width: 44px; 
+  min-height: 44px;
+}
+
+// 5. Estilos para el pie de página de la tarjeta (Likes y comentarios)
+ion-card-content {
+  padding-bottom: 5px;
+
+  ion-button[fill="clear"] {
+    // Aumenta un poco el tamaño de los iconos de like y comentario
+    font-size: 1.1em; 
+  }
+}

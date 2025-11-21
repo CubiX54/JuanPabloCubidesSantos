@@ -1,0 +1,81 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/feed"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light">Publicación</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="ion-text-center ion-padding" *ngIf="isLoading">
+    <ion-spinner name="crescent" color="primary"></ion-spinner>
+    <p>Cargando publicación...</p>
+  </div>
+
+  <div *ngIf="post && !isLoading">
+    
+    <ion-card class="ion-no-margin" style="border-radius: 0;">
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img [src]="post.user.avatar_url || 'assets/default-avatar.png'" />
+        </ion-avatar>
+        <ion-label>
+          <h3>{{ post.user.name }}</h3>
+          <p>{{ post.created_at | date:'medium' }}</p>
+        </ion-label>
+      </ion-item>
+
+      <img [src]="post.image_url" class="post-image" />
+
+      <ion-card-content>
+        <p>{{ post.caption }}</p>
+        <p class="ion-padding-top ion-text-end">**{{ post.likes_count }} likes**</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-list class="ion-padding-top" *ngIf="post.comments && post.comments.length > 0">
+        <ion-list-header color="medium">
+            <ion-label>Comentarios ({{ post.comments.length }})</ion-label>
+        </ion-list-header>
+        <ion-item *ngFor="let comment of post.comments" lines="full">
+            <ion-avatar slot="start">
+              <img [src]="comment.user.avatar_url || 'assets/default-avatar.png'" />
+            </ion-avatar>
+            <ion-label>
+                <p><strong>{{ comment.user.username }}</strong></p>
+                <p>{{ comment.content }}</p>
+            </ion-label>
+            <ion-note slot="end">{{ comment.created_at | date:'shortTime' }}</ion-note>
+        </ion-item>
+    </ion-list>
+    
+    <p class="ion-text-center ion-padding" *ngIf="!post.comments || post.comments.length === 0">
+        Sé el primero en comentar.
+    </p>
+
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-item lines="none">
+      <ion-input 
+        placeholder="Escribe un comentario..." 
+        [(ngModel)]="newComment" 
+        (keyup.enter)="submitComment()"
+      ></ion-input>
+      <ion-button 
+        slot="end" 
+        fill="clear" 
+        color="secondary" 
+        (click)="submitComment()"
+        [disabled]="!newComment || newComment.trim().length === 0"
+      >
+        Enviar
+      </ion-button>
+    </ion-item>
+  </ion-toolbar>
+</ion-footer>

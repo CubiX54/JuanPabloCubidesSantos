@@ -1,0 +1,26 @@
+/* src/app/pages/profile/profile.page.scss */
+
+// Asegura que el contenido tenga un fondo blanco
+ion-content {
+  --background: #000000;
+}
+
+// Estilo del Avatar
+.profile-avatar {
+    margin: 20px auto;
+    width: 100px;
+    height: 100px;
+    border: 3px solid var(--ion-color-secondary); /* Borde azul */
+    padding: 3px;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.5); /* Sombra azul tenue */
+}
+
+// Estilo de la miniatura de la publicación
+.post-thumb {
+    width: 100%;
+    // Altura fija para mantener el grid uniforme
+    height: 100px; 
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+}
